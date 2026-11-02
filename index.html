@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Traductor Hebreo → Inglés (Strong's)</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Traductor Hebreo → Inglés</h1>
+    <p>Usa automáticamente <code style="color:var(--accent)">hebrew_biblical_dict.js</code> (Strong's Hebrew).</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="primary" id="btnGo">Traducir ▸</button>
+    <button id="btnClear">Limpiar</button>
+    <button id="btnSample">Ejemplo</button>
+    <button id="btnReload">Recargar diccionario</button>
+    <label class="filelabel" for="file">Cargar otro .js / .json</label>
+    <input type="file" id="file" accept=".js,.txt,.json,text/plain">
+    <span class="status" id="status">Cargando diccionario…</span>
+  </div>
+
+  <textarea id="input" spellcheck="false" placeholder="Escribe o pega aquí texto en hebreo, una frase por línea…"></textarea>
+
+  <div class="panel" id="panelOut" hidden>
+    <div class="panel-head">
+      <h2>Traducción literal</h2>
+      <button id="btnCopy" title="Copiar la traducción al portapapeles">📋 Copiar</button>
+    </div>
+    <div class="literal" id="literal"></div>
+  </div>
+
+  <div class="panel" id="panelWords" hidden>
+    <h2>Palabra por palabra</h2>
+    <div class="words" id="words"></div>
+  </div>
+
+  <div class="legend">
+    <b>Notas:</b> se ignoran los signos de puntuación hebreos (maqaf <code>־</code>, sof pasuq <code>׃</code>)
+    y los signos de vocalización (niqqud) para la búsqueda.<br>
+    Si una palabra exacta no aparece, se intenta separar prefijos (<code>ו</code>, <code>ב</code>, <code>ל</code>,
+    <code>מ</code>, <code>כ</code>, <code>ש</code>, <code>ה</code>…) y sufijos pronominales (<code>י</code>,
+    <code>ך</code>, <code>ו</code>, <code>ה</code>, <code>נו</code>, <code>ם</code>…).<br>
+    <span class="file">Coloca <code>hebrew_biblical_dict.js</code> en la misma carpeta que este HTML.</span>
+    Si no se encuentra, pulsa <b>Recargar diccionario</b> o carga el archivo manualmente.
+  </div>
+</div>
+
+<!-- 1) CARGA DEL DICCIONARIO EXTERNO -->
+<script src="hebrew_biblical_dict.js" onerror="window.__DICT_LOAD_ERROR = true"></script>
+
+<!-- 2) LÓGICA DE LA APLICACIÓN -->
+<script src="script.js"></script>
+</body>
+</html>

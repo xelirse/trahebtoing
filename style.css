@@ -1,0 +1,108 @@
+:root{
+  --bg:#0b0f17; --panel:#151d2c; --panel2:#1c2637; --border:#2b3a55;
+  --txt:#e8eefc; --muted:#8fa2c4; --accent:#5ec8ff; --accent2:#8ef0b0;
+  --heb:#ffd479; --warn:#ff9b7a; --ok:#7ee2a8;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; padding:24px 16px 60px;
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--txt);
+  background:radial-gradient(1200px 600px at 15% -10%, #1b2740, #0b0f17 60%) fixed;
+}
+.wrap{max-width:1080px;margin:0 auto}
+header h1{margin:0 0 6px;font-size:1.6rem;letter-spacing:.2px}
+header p{margin:0;color:var(--muted);font-size:.92rem}
+
+.toolbar{
+  display:flex;flex-wrap:wrap;gap:10px;align-items:center;
+  margin:18px 0 12px;
+}
+button, .filelabel{
+  font:inherit;font-size:.9rem;cursor:pointer;
+  background:var(--panel2);color:var(--txt);
+  border:1px solid var(--border);border-radius:10px;
+  padding:9px 14px;transition:.15s;
+}
+button:hover,.filelabel:hover{background:#243350;border-color:#3d5478}
+button.primary{background:linear-gradient(180deg,#2b8fd6,#1f6fae);border-color:#3aa2ea;font-weight:600}
+button.primary:hover{background:linear-gradient(180deg,#3aa2ea,#2379bb)}
+button.copied{
+  background:linear-gradient(180deg,#2fae6a,#237a4a) !important;
+  border-color:#3ed884 !important;
+  color:#fff !important;
+}
+#file{display:none}
+.status{font-size:.82rem;color:var(--muted);margin-left:auto;text-align:right}
+.status.err{color:var(--warn)}
+.status.ok{color:var(--ok)}
+
+textarea{
+  width:100%;min-height:160px;resize:vertical;
+  background:#0e1622;color:var(--heb);
+  border:1px solid var(--border);border-radius:14px;
+  padding:14px 16px;font-size:1.35rem;line-height:1.9;
+  font-family:"Times New Roman","David CLM","Ezra SIL",serif;
+  direction:rtl;text-align:right;outline:none;
+}
+textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(94,200,255,.12)}
+
+.panel{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:14px;padding:16px 18px;margin-top:18px;
+}
+.panel-head{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;margin-bottom:10px;
+}
+.panel-head h2{margin:0}
+.panel-head button{
+  font-size:.8rem;padding:6px 12px;
+}
+h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.14em;
+   color:var(--muted);margin:0 0 10px;font-weight:700}
+
+.literal{
+  font-size:1.25rem;line-height:1.9;color:var(--accent2);
+  direction:ltr;text-align:left;font-weight:500;
+}
+.literal .unk{color:var(--warn);font-style:italic}
+
+.words{display:flex;flex-direction:column;gap:12px}
+.line-separator {
+  margin-top: 16px; margin-bottom: 4px; font-size: .75rem; 
+  color: var(--muted); text-transform: uppercase; letter-spacing: .1em; 
+  font-weight: bold; border-bottom: 1px solid var(--border); padding-bottom: 4px;
+}
+.card{
+  background:var(--panel2);border:1px solid var(--border);
+  border-radius:12px;padding:12px 14px;
+}
+.card.unknown{border-color:#5a3a34}
+.card-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.heb{
+  font-family:"Times New Roman","David CLM","Ezra SIL",serif;
+  font-size:1.7rem;color:var(--heb);direction:rtl;line-height:1.4;
+}
+.translit{color:var(--muted);font-size:.85rem;font-style:italic}
+.affix{
+  font-size:.75rem;color:var(--accent);border:1px solid #2c4a68;
+  background:#132434;border-radius:999px;padding:2px 9px;
+}
+.opt{padding:7px 0;border-top:1px dashed #2a3a56}
+.opt:first-child{border-top:none;padding-top:0}
+.tag{
+  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;
+  background:#12324a;color:var(--accent);border:1px solid #24506f;
+  border-radius:6px;padding:1px 7px;margin-right:8px;vertical-align:1px;
+}
+.gloss{color:var(--accent2);font-weight:700}
+.def{color:var(--muted);font-size:.85rem;margin-top:3px;line-height:1.5}
+.kjv{color:#6f81a3;font-size:.78rem;margin-top:2px;line-height:1.5}
+.muted{color:var(--muted);font-size:.9rem}
+
+.legend{margin-top:22px;color:var(--muted);font-size:.78rem;line-height:1.7}
+.legend code{background:#101a28;border:1px solid var(--border);
+  border-radius:5px;padding:1px 6px;color:var(--heb)}
+.legend .file{color:var(--accent)}
