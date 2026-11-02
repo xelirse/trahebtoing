@@ -1,5 +1,7 @@
 # trahebtoing
 
+![Captura de pantalla del traductor](2026-11-02_19-03.png)
+
 **Traductor de hebreo a inglés (hecho con IA)**
 
 Un traductor web ligero y de código abierto que utiliza el diccionario Strong's Hebrew para traducir texto hebreo al inglés. Muestra una traducción literal y un desglose detallado palabra por palabra.
@@ -28,6 +30,7 @@ trahebtoing/
 ├── style.css
 ├── script.js
 ├── hebrew_biblical_dict.js  <-- (Tu archivo de diccionario)
+├── 2026-11-02_19-03.png     <-- (La imagen de captura)
 └── README.md
 ```
 
